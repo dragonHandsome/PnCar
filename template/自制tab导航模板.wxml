@@ -1,0 +1,41 @@
+<!--
+    currentPage: '',//存储当前页
+    currentImg: '',//存储当前页图标
+    //导航条信息
+    nav:[
+      { url: '/pages/index/index', img: '/images/ic-home.svg', title: '首页' }, { url: '/pages/handy/handy', img: '/images/ic-con.svg', title: '便民' }, { url: '/pages/kitchen/kitchen', img: '/images/ic-kit.svg', title: '私厨' }, { url: '/pages/nearby/nearby', img: '/images/ic-near.svg', title: '附近' }, { url: '/pages/my/my', img: '/images/ic-me.svg', title: '我的' }
+    ]
+  },
+  //重置url
+  replaceURL(e) {
+    let url = app.getDataset2(e, 'url'),
+      currentPage = this.data.currentPage;
+    if (url != currentPage) {
+      wx.redirectTo({
+        url
+      })
+    }
+  },
+  //onload时需进行函数
+  onLoad: function () {
+    let currentPage = getCurrentPages();
+    currentPage = '/' + currentPage.slice(-1)[0].route;
+    let currentImg = this.data.nav.filter(item => item.url == currentPage)[0].img.replace(/-(\w+)/, args => args + '-cur');//转换成当前页的svg路径
+    this.setData({
+      currentPage,
+      currentImg
+    })
+  },
+-->
+<template name='nav'>
+  <view class='nav'>
+    <block wx:for='{{nav}}' wx:key='{{item.id}}'>
+      <view class="nav-card {{currentPage == item.url?'act':''}}" bindtap='replaceURL' data-url='{{item.url}}'>
+        <view class='nav-card-img'>
+          <image src="{{currentPage != item.url?item.img:currentImg}}"></image>
+        </view>
+        <text>{{item.title}}</text>
+      </view>
+    </block>
+  </view>
+</template>

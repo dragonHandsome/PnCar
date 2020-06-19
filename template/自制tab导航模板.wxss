@@ -1,0 +1,28 @@
+/*nav*/
+.nav{
+  height: 114rpx;
+  width: 100%;
+  position: fixed;
+  bottom:0;
+  display: flex;
+  z-index: 0;
+  background-color: #fff;
+  align-items: center;
+  text-align: center;
+  font-size: 26rpx;
+  color:rgb(102,102,102);
+}
+.nav-card{
+  flex:1;
+}
+.nav-card.act{
+  color: rgb(56,151,227);
+}
+.nav-card>view{
+  margin:0 auto;
+}
+.nav-card .nav-card-img{
+  width: 40rpx;
+  height: 40rpx;
+  margin-bottom: 10rpx;
+}

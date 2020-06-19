@@ -1,0 +1,23 @@
+<view class='tab'>
+  <view class='tabLeft'>
+    <block wx:for='{{tabs}}' wx:key=''>
+      <view class="{{current == index?'act':''}}">{{item.title}}</view>
+    </block>
+  </view>
+  <view class='tabRight'>
+    <block wx:for='{{tabs}}' wx:key=''>
+      <view>{{item.title}}</view>
+      <view class='content'>
+        <view class='content-item' wx:for='{{item.content}}' wx:key=''>
+          {{item.name+'=='+item.img}}
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+<view style='display:flex;margin-top:20rpx;height:350rpx;'>
+
+<map style='display:flex;width:100%;height:100%'>
+
+</map>
+</view>

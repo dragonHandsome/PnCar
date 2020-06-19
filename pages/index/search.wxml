@@ -1,0 +1,8 @@
+<import src="/template/template.wxml" />
+<view class='pageSearch body'>
+    <template is='search' data='{{focusFlag,selectABC,cityNotNead,wantSearch,historySearch}}'></template>
+    <template is='sxuan' data="{{selectFlag,selectInfo,sortImg}}"></template>
+    <view class='srh-content'>
+      <template is='shop' data="{{shopList}}"></template>
+    </view>
+</view>

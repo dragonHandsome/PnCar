@@ -1,0 +1,59 @@
+@import '/template/template.wxss';
+view{
+  box-sizing: border-box;
+}
+.swiper{
+  width: 100%;
+}
+.swiper swiper{
+  height: 320rpx;
+  box-sizing: border-box;
+}
+.swiper-img{
+  height: 320rpx;
+  width: 100%;
+}
+.tab{
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 1rpx solid rgb(245,245,245);
+}
+.tab view{
+  flex:1;
+}
+.tab .act{
+  color: rgb(56,151,227);
+}
+.tabContent,.tabContent swiper{
+  height: 170rpx;
+  width: 100%;
+}
+.tabContent scroll-view{
+  height: 170rpx;
+}
+.tabContent-img{
+  width: 660rpx;
+  height: 140rpx;
+  align-self: center;
+  margin:14rpx auto;
+  box-sizing: content-box;
+}
+.newIn{
+  padding-top:20rpx;
+  justify-content: flex-start;
+}
+.newIn-card{
+  text-align: center;
+  height: 100%;
+}
+.newIn-img{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin:0 23rpx;
+  overflow: hidden;
+}
+

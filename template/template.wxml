@@ -1,0 +1,177 @@
+<!--
+  <template name='shop'>
+  shopList 商品列表
+-->
+<template name='shop'>
+  <view class='shop'>
+    <block wx:for='{{shopList}}' wx:key='{{item.id}}'>
+      <view class='shop-card flex'>
+        <view class='shop-card-left'>
+          <image src='{{item.img}}'></image>
+        </view>
+        <view class='shop-card-right'>
+          <view class='s-c-r-title font6 fontb fonthide'>
+            {{item.name}}
+          </view>
+          <view class='s-c-r-marks font1 fonta flex'>
+            <block wx:for='{{item.nature}}' wx:key='{{item.natureId}}'>
+              <text class='s-c-r-mark bggray'>{{item.name}}</text>
+            </block>
+          </view>
+          <view class='seeData flex'>
+            <view class='nature font1 fontblue'>{{item.property}}</view>
+            <view class='price font2 fontred'>￥{{item.price}}</view>
+            <view class='buynum font1 fontc'>月销售{{item.sendNum}}</view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</template>
+<!--
+  <template name='search'>
+  focusFlag 是否聚焦搜索
+  cityFlag 是否需要展示城市
+  citys 城市列表
+  recentCity 最近城市列表
+  selectABC 定位首字母城市
+-->
+<template name='search'>
+  <view class='search flex'>
+    <view class='search-left'>
+      <view class='search-left-all flex bggray'>
+        <view class='search-left-allImg'>
+          <image src='/images/ic-search.png'></image>
+        </view>
+        <input bindconfirm='searchItem' bindfocus='searchfocus' data-focus='1' confirm-type="搜索" placeholder='请输入您想要搜索的' placeholder-class='placeholder font4' class='font6'></input>
+      </view>
+    </view>
+    <view class='search-right flex font6 fonta' wx:if="{{!cityNotNead && focusFlag == '0' && !cityFlag}}" bindtap='cityfocus'>
+      <view>东莞</view>
+      <view class='icon-img'>
+        <image src='/images/ic-sort.png'></image>
+      </view>
+    </view>
+    <view wx:elif="{{!cityNotNead || focusFlag != '0' }}" bindtap='searchfocus' data-focus='0' class='search-right flex font6 fontblue'>
+      取消
+    </view>
+  </view>
+  <view class="search-content font2 {{focusFlag == '0'?'':'act'}}">
+    <view class='search-content-title fontc'>猜你想找</view>
+    <view class='search-content-info fontb flex'>
+      <block wx:for='{{wantSearch}}' wx:key='{{item}}'>
+        <text class='search-content-card'>{{item}}</text>
+      </block>
+    </view>
+    <view class='search-content-title fontc'>历史记录</view>
+    <view class='search-content-info fontb flex'>
+      <block wx:for='{{historySearch}}' wx:key='{{item}}'>
+        <text class='search-content-card'>{{item}}</text>
+      </block>
+    </view>
+    <view class='search-delete fontb'>删除记录</view>
+  </view>
+  <view class="selectCity font6 {{cityFlag?'act':''}}">
+    <view class='selectCity-head'>
+      <view class='selectCity-info font6 fontb'>
+        当前定位: 东莞
+      </view>
+      <view class='recent'>
+        <view class='fontgray'>最近访问城市</view>
+        <view class='recent-city fonta'>
+          <block wx:for='{{recentCity}}' wx:key='{{item.id}}'>
+            <view class='recent-city-card'>
+              深圳
+            </view>
+            <view class='recent-city-card'>
+              惠州
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+    <view class='selectCity-content font6 fonta'>
+      <scroll-view scroll-y='true' style='height:800rpx' scroll-into-view='{{selectABC}}'>
+        <block wx:for='{{citys}}' wx:key='{{item.sort}}'>
+          <view class='selectCity-content-title' id='{{item.sort}}'>{{item.sort}}</view>
+          <view class='selectCity-content-list'>
+            <block wx:for='{{item.city}}' wx:key='{{item.id}}'>
+              <view class='selectCity-content-list-card' data-id='{{item.id}}' bindtap='getCity'>
+                {{item.name}}
+              </view>
+            </block>
+          </view>
+        </block>
+      </scroll-view>
+      <view class='selectCity-mark' bindtap='selectWhich' >
+        <view class="fontblue">定位</view>
+        <block wx:for='{{citys}}' wx:key='{{item.sort}}'>
+          <view class="fontblue" data-sort='{{item.sort}}' catchtouchmove='handle' catchtouchstart='initHandle' data-i='{{index}}'>{{item.sort}}</view>
+        </block>
+      </view>
+    </view>
+  </view>
+</template>
+<!--
+  <template name='sxuan'>
+  selectFlag,是否显示筛选
+  selectInfo, 0 无序 1 升序 2降序
+  sortImg,上下图标数组
+-->
+<template name='sxuan'>
+  <view class="list-tab font6 fonta flex {{selectFlag?'':'act'}}">
+    <view class='list-tab-card flex' bindtap='sortSelect' data-i='0'>
+      <view class="{{selectInfo[0]!=0?'fontblue':''}}">最热</view>
+      <view class='list-tab-cardImgs'>
+        <view class='tab-cardImg1'>
+          <image src="{{selectInfo[0]==1?sortImg[1]:sortImg[0]}}"></image>
+        </view>
+        <view class='tab-cardImg2'>
+          <image src="{{selectInfo[0]==2?sortImg[1]:sortImg[0]}}"></image>
+        </view>
+      </view>
+    </view>
+    <view class='list-tab-card flex' bindtap='sortSelect' data-i='1'>
+      <view class="{{selectInfo[1]!=0?'fontblue':''}}">最新</view>
+      <view class='list-tab-cardImgs'>
+        <view class='tab-cardImg1'>
+          <image src="{{selectInfo[1]==1?sortImg[1]:sortImg[0]}}"></image>
+        </view>
+        <view class='tab-cardImg2'>
+          <image src="{{selectInfo[1]==2?sortImg[1]:sortImg[0]}}"></image>
+        </view>
+      </view>
+    </view>
+    <view class='list-tab-card flex' bindtap='sortSelect' data-i='2'>
+      <view class="{{selectInfo[2]!=0?'fontblue':''}}">销量</view>
+      <view class='list-tab-cardImgs'>
+        <view class='tab-cardImg1'>
+          <image src="{{selectInfo[2]==1?sortImg[1]:sortImg[0]}}"></image>
+        </view>
+        <view class='tab-cardImg2'>
+          <image src="{{selectInfo[2]==2?sortImg[1]:sortImg[0]}}"></image>
+        </view>
+      </view>
+    </view>
+    <view class='list-tab-card flex' catchtap='changeSelect'>
+      <view class="{{selectFlag?'fontblue':''}}">筛选</view>
+      <view class='list-tab-cardImgs'>
+
+      </view>
+    </view>
+  </view>
+  <view class="select-list font4 fonta {{selectFlag?'':'act'}}">
+    <view class='select-list-contr'>
+      <view class='select-card'>
+        <view class="select-card-info">男装</view>
+      </view>
+      <view class='select-card'>
+        <view class="select-card-info">女装</view>
+      </view>
+      <view class='select-card'>
+        <view class="select-card-info">男鞋</view>
+      </view>
+    </view>
+  </view>
+  <view class="black" wx:if="{{selectFlag}}" bindtap='changeSelect'></view>
+</template>

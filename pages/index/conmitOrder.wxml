@@ -1,0 +1,86 @@
+<view class='conmit font6'>
+  <view class='commit-head'>
+    <view class='marginAuto flex'>
+      <view wx:if='{{addressInfo}}' class='commit-head-head'>
+        <view class='flex font8'>
+          <view class='commit-head-name' style='margin-right:28rpx;'>{{addressInfo.name}}</view>
+          <view class='commit-head-phone'>{{addressInfo.phone}}</view>
+        </view>
+        <view class='addr fontc'>
+          地址: {{addressInfo.addr}}
+        </view>
+      </view>
+      <view wx:else  class='commit-head-head commit-head-head2'>请填写收货地址</view>
+      <view class='jianT'></view>
+    </view>
+    <view class='commit-head-img'>
+      <image src='/images/pic-banner01.png'></image>
+    </view>
+  </view>
+  <view class='shopInfo'>
+    <view class='shopInfo-head'>
+      <view class='marginAuto shopInfo-head-title'>平台{{shopInfo.property}}</view>
+      <view class='shopInfo-head-card marginAuto flex'>
+        <view class='shopInfo-head-card-img'>
+          <image src='/images/pic-banner01.png'></image>
+        </view>
+        <view class='shopInfo-head-card-info flex'>
+          <view class='fonthide'>{{shopInfo.name}}</view>
+          <view class='fonta font1'>{{shopInfo.natureInfo[0].name+','+shopInfo.natureInfo[1].name}}</view>
+          <view class='flex'>
+            <view class='fontred font5'>￥{{shopInfo.price}}</view>
+            <view class=''>X{{shopInfo.num}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='conmit-option-card c-o-c1'>
+    <view class='marginAuto conmit-option-card-son'>
+      <view>优惠券</view>
+      <view class='flex'>
+        <view class='fontc'>无可用</view>
+        <view class='jianT'></view>
+      </view>
+    </view>
+  </view>
+  <view class='c-o-c1'>
+    <view class='marginAuto conmit-option-card-son underline'>
+      <view>配送服务</view>
+      <view class='flex'>
+        <view class='fontc'>快递运输</view>
+      </view>
+    </view>
+    <view class='marginAuto conmit-option-card-son'>
+      <view>发票信息</view>
+      <view class='flex'>
+        <view class='fontc'>{{shopInfo.invoice[invoiceCurrent].name}}</view>
+        <view class='jianT'></view>
+      </view>
+    </view>
+  </view>
+  <view class='c-o-c1'>
+    <view class='marginAuto conmit-option-card-son underline'>
+      <view>总金额</view>
+      <view class='flex'>
+        <view class='fontred'>￥{{shopInfo.num * shopInfo.price}}</view>
+      </view>
+    </view>
+    <view class='marginAuto conmit-option-card-son underline'>
+      <view>运费</view>
+      <view class='flex'>
+        <view class='fontc fontred'>￥{{shopInfo.freight}}</view>
+      </view>
+    </view>
+    <view class='marginAuto conmit-option-card-son underline'>
+      <view>应付金额</view>
+      <view class='flex'>
+        <view class='fontc fontred'>￥{{shopInfo.realMoney}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='gobuy'>
+    <view class='gobuy-head'>应付金额: <text class='fontred'>￥{{shopInfo.realMoney}}</text></view>
+    <button class='gobuy-btn'>去结算</button>
+  </view>
+</view>

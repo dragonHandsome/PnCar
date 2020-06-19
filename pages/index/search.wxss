@@ -1,0 +1,9 @@
+@import '/template/template.wxss';
+.list-tab.act{
+  position: fixed;
+  top:88rpx;
+}
+.srh-content{
+  margin-top: 110rpx;
+  width: 100%;
+}

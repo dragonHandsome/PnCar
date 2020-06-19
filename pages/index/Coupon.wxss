@@ -1,0 +1,81 @@
+page{
+  background-color: #f8f8f8;
+}
+.Coupon-head{
+  height: 90rpx;
+  line-height: 90rpx;
+  border-bottom: 1rpx solid #dddddd;
+  background-color: #fff;
+  position: relative;
+}
+.underLineAct{
+  position: absolute;
+  bottom: 0;
+  left: 76rpx;
+  width: 100rpx;
+  height: 2rpx;
+  background-color: rgb(56,151,227);
+  transition: all 0.3s cubic-bezier(.14,-0.51,.75,1.45);
+}
+.underLineAct2{
+  left: 324rpx;
+}
+.underLineAct3{
+  left: 577rpx;
+}
+.Coupon-head > view.act{
+  color: rgb(56,151,227);
+}
+.Coupon-head-son{
+  flex: 1;
+  text-align: center;
+}
+.Coupon-card{
+  height: 208rpx;
+  margin:0 auto;
+  margin-top:40rpx;
+  width: 612rpx;
+  position: relative;
+}
+.Coupon-card>image{
+  position: absolute;
+  top:0;
+  left: 0;
+  z-index: -1;
+}
+.Coupon-card-head{
+  height: 140rpx;
+  box-sizing: border-box;
+  color: #fff;
+  align-items: center;
+}
+.Coupon-card-head-left{
+  margin-left: 45rpx;
+}
+.Coupon-card-head-num{
+  font-size: 91rpx;
+}
+.Coupon-card-head-center{
+  margin-left: 30rpx;
+}
+.Coupon-card-head-name{
+  font-size: 32rpx;
+}
+.Coupon-card-bom{
+  color: #999999;
+  height: 68rpx;
+  box-sizing: border-box;
+  line-height: 68rpx;
+  padding-left: 20rpx;
+}
+.Coupon-card-head-ms{
+  color:rgba(255,255,255,0.5);
+}
+.Coupon-card-head-have{
+  position: absolute;
+  top:34rpx;
+  right: 54rpx;
+  line-height: 32rpx;
+  width: 60rpx;
+  letter-spacing:5rpx;
+}

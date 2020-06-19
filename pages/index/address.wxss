@@ -1,0 +1,53 @@
+page{
+  background-color: #f8f8f8;
+  font-size: 26rpx;
+}
+.marginAuto{
+  width: 684rpx;
+  margin:0 auto;
+  height: 100%;
+}
+.conmit-option-card-son{
+  height: 90rpx;
+  box-sizing: content-box;
+  display: -webkit-flex;
+  display: flex;
+  line-height: 90rpx;
+  align-items: center;
+}
+.conmit-option-card-son > .flex view:first-child{
+  margin-right: 28rpx;
+}
+.c-o-c1{
+  border-bottom: 20rpx solid #f8f8f8;
+  background-color: #fff;
+}
+.underline{
+  border-bottom:1rpx solid #f8f8f8;
+}
+.fontb{
+  width: 144rpx;
+}
+.conmit-option-card-son .have{
+  justify-content: space-between;
+  width: 540rpx;
+}
+.addr-btn{
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  color: #fff;
+  background-color: #61acff;
+  width: 684rpx;
+  margin-top:60rpx;
+  font-size: 26rpx;
+}
+.addr-btn2{
+    background-color: #fff;
+    margin-top: 20rpx;
+    color: rgb(102,102,102);
+}
+.c-o-c1 input{
+  width: 500rpx;
+}
+@import '/template/picker.wxss';

@@ -1,0 +1,60 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/test",
+    "pages/index/address",
+    "pages/index/Coupon",
+    "pages/index/conmitOrder",
+    "pages/index/shopDetail",
+    "pages/index/search",
+    "pages/handy/handy",
+    "pages/kitchen/kitchen",
+    "pages/nearby/nearby",
+    "pages/my/my",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#3897E3",
+    "navigationBarTitleText": "普宁出行",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/images/ic-home.png",
+        "selectedIconPath": "/images/ic-home-cur.png"
+      },
+      {
+        "pagePath": "pages/index/search",
+        "text": "便民",
+        "iconPath": "/images/ic-con.png",
+        "selectedIconPath": "/images/ic-con-cur.png"
+      },
+      {
+        "pagePath": "pages/index/shopDetail",
+        "text": "私厨",
+        "iconPath": "/images/ic-kit.png",
+        "selectedIconPath": "/images/ic-kit-cur.png"
+      },
+      {
+        "pagePath": "pages/index/Coupon",
+        "text": "附近",
+        "iconPath": "/images/ic-near.png",
+        "selectedIconPath": "/images/ic-near-cur.png"
+      },
+      {
+        "pagePath": "pages/index/address",
+        "text": "我的",
+        "iconPath": "/images/ic-me.png",
+        "selectedIconPath": "/images/ic-me-cur.png"
+      }
+    ],
+    "backgroundColor": "#ffffff",
+    "color": "#333333",
+    "selectedColor": "#3897E3"
+  },
+  "sitemapLocation": "sitemap.json"
+}

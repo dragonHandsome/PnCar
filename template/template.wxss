@@ -1,0 +1,299 @@
+/*shop*/
+.shop{
+  width: 100%;
+  padding-bottom: 20rpx;
+}
+.shop-card{
+  height: 200rpx;
+  width: 710rpx;
+  margin-left: 30rpx;
+  margin-top:25rpx;
+  padding-bottom: 25rpx;
+  border-bottom: 2rpx solid rgb(245,245,245);
+}
+.shop-card-left{
+  width: 170rpx;
+  height: 170rpx;
+}
+.shop-card-right{
+  margin-left: 20rpx;
+  width: 498rpx;
+}
+.s-c-r-marks{
+  margin-bottom: 10rpx;
+}
+.s-c-r-mark{
+  border-radius: 15rpx;
+  padding: 2rpx 10rpx;
+  margin-right: 10rpx;
+}
+.seeData{
+  margin-top:30rpx;
+}
+.seeData > view{
+  margin-right: 10rpx;
+}
+.nature{
+  border:1rpx solid rgba(56,151,227,0.8);
+  border-radius: 15rpx;
+  padding: 2rpx 10rpx;
+}
+
+/*search*/
+
+.placeholder{
+  color: rgb(204,204,204)
+}
+.search{  
+  height: 88rpx;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  position: fixed;
+  top:0;
+  left: 0;
+  z-index: 1;
+  background-color: #fff;
+}
+.search-left{
+  height: 62rpx;
+  flex: 6;
+  margin: 0 32rpx;
+}
+.search-left input{
+  width: 95%;
+}
+.search-left-all{
+  position: relative;
+  align-items: center;
+  border-radius: 10rpx;
+  overflow: hidden;
+  height: 62rpx;
+}
+.search-left-allImg{
+  display: block;
+  width: 30rpx;
+  height: 30rpx;
+  margin: 0 12rpx;
+  position: relative;
+}
+.search-left-allImg image{
+  position: absolute;
+  top:0;
+  left: 0;
+}
+.search-right{
+  align-items: center;
+  height: 80rpx;
+  flex:1;
+}
+.search-right.act{
+  display: none;
+}
+.icon-img{
+  width:14rpx;
+  height: 14rpx;
+  position: relative;
+  margin-left: 5rpx;
+}
+.icon-img image{
+  position: absolute;
+  top:0;
+  left: 0;
+}
+.search-content{
+  position: fixed;
+  top:88rpx;
+  left: 0;
+  width: 100%;
+  padding: 0rpx 32rpx;
+  z-index: 5;
+  background-color: #fff;
+  transition: all 0.3s;
+  height:0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.search-content.act{
+  height: 1300rpx;
+  padding: 20rpx 32rpx;
+}
+.search-content-title{
+  margin-bottom:16rpx;
+}
+.search-content-info{
+  margin-bottom: 30rpx;
+  flex-wrap: wrap;
+}
+.search-content-card{
+  background-color: rgb(245,245,245);
+  border-radius: 5rpx;
+  overflow: hidden;
+  padding: 5px;
+  margin-right: 20rpx;
+  margin-bottom: 25rpx;
+}
+.search-delete{
+  width: 680rpx;
+  background-color: rgb(245,245,245);
+  text-align: center;
+  padding: 10rpx 0;
+  margin-top:100rpx;
+}
+/*select city*/
+.selectCity{
+  position: fixed;
+  top:88rpx;
+  background-color: #fff;
+  width: 100%;
+  z-index: 2;
+  right: 0;
+}
+.selectCity-head{
+  margin-left: 30rpx;
+}
+.selectCity-info{
+  padding: 15rpx 0 ;
+  border-bottom: 4rpx solid rgb(245,245,245);
+  margin-bottom: 20rpx;
+}
+.recent-city{
+  margin-top: 15rpx;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  text-align: center;
+  padding-bottom: 30rpx;
+}
+.recent-city>view{
+  border:2rpx solid rgb(245,245,245);
+  border-radius: 10rpx;
+  margin-right: 20rpx;
+  margin-bottom: 15rpx;
+  padding: 5rpx 0;
+}
+.selectCity{
+  overflow: hidden;
+  width: 0;
+  transition: all 0.3s;
+}
+.selectCity.act{
+  width: 100%;
+}
+.selectCity-content{
+  min-height: 1000rpx;
+  background-color: #fff;
+}
+.selectCity-content-title{
+  background-color: rgb(245,245,245);
+  padding: 8rpx 0;
+  padding-left: 30rpx;
+}
+.selectCity-content-list-card{
+  margin-left: 30rpx;
+  padding:26rpx 0;
+  border-bottom: 1rpx solid rgb(245,245,245);
+}
+.selectCity-mark{
+
+  border-bottom: 1rpx solid rgb(245,245,245);
+}
+.selectCity-mark{
+  position: absolute;
+  right: 30rpx;
+  top:224rpx;
+  text-align: center;
+}
+.selectCity-mark:first-child{
+  margin-bottom: 25rpx;
+}
+.selectCity-mark>view{
+  padding: 2rpx 6rpx;
+}
+/*筛选*/
+.list-tab{
+  position: fixed;
+  top:88rpx;
+  border:1rpx solid rgb(245,245,245);
+  border-width: 10rpx 0 1rpx 0;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  background-color: #fff;
+  z-index: 1;
+}
+.list-tab.act{
+  position: relative;
+  top:0;
+}
+.list-tab>view{
+  flex:1;
+}
+.list-tab-card{
+  justify-content: center;
+  align-items: center;
+  height: 80rpx;
+}
+.list-tab-card.act{
+  color:rgb(56,151,227);
+}
+.list-tab-cardImgs{
+  height: 24rpx;
+  width: 24rpx;
+}
+.list-tab-cardImgs>view{
+  height: 12rpx;
+  width: 12rpx;
+  margin: 0 auto;
+  position: relative;
+}
+.list-tab-cardImgs>view>image{
+  position: absolute;
+  left: 0;
+  top:0;
+}
+.tab-cardImg1{
+  transform: rotate(180deg);
+}
+.select-list{
+  width: 100%;
+  padding: 0 25rpx;
+  top:178rpx;
+  right: 0;
+  margin:0 auto;
+  text-align: center;
+  border-bottom: 20rpx solid rgb(56,151,227);
+  border-top:4rpx solid #f8f8f8;
+  transition: all 0.2s;
+  overflow: hidden;
+  position: fixed;
+  z-index: 1;
+  background-color: #fff;
+  min-height:500rpx;
+}
+.select-list.act{
+  height: 0;
+  width: 0;
+  padding: 0;
+  border:none;
+}
+.select-list-contr{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #fff;
+}
+.select-card{
+  height: 88rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2rpx solid rgb(245,245,245);
+}
+.select-card>view{
+  height: 40rpx;
+  width: 100%;
+}
+.select-list .select-card:nth-of-type(2n-1) view{
+  border-right: 1rpx solid rgb(245,245,245);
+}

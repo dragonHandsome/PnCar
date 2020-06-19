@@ -1,0 +1,107 @@
+.conmit{
+  padding-bottom: 190rpx;
+}
+.marginAuto{
+  width: 684rpx;
+  margin:0 auto;
+  height: 100%;
+}
+.commit-head{
+  height: 186rpx;
+  align-items: center;
+  position: relative;
+  box-sizing: border-box;
+}
+.commit-head>view{
+  justify-content: space-between;
+}
+.commit-head .commit-head-head{
+  height: 90rpx;
+  align-self: center;
+  line-height: 45rpx;
+}
+.commit-head .commit-head-head2{
+  line-height: 90rpx;
+}
+.commit-head-img{
+  position: absolute;
+  bottom: 10rpx;
+  width: 100%;
+  height: 10rpx;
+}
+.commit-head-img>image{
+  position: absolute;
+  top:0;
+  left: 0;
+}
+.shopInfo{
+  border: 20rpx solid #f8f8f8;
+  border-width: 20rpx 0;
+}
+.shopInfo-head>.shopInfo-head-title{
+  height: 90rpx;
+  line-height: 90rpx;
+  border-bottom: 1rpx solid #f8f8f8;
+}
+.shopInfo-head-card{
+  align-items: center;
+  height: 250rpx;
+}
+.shopInfo-head-card-img{
+  height: 168rpx;
+  width: 170rpx;/*234rpx*/
+  padding: 4rpx 5rpx;
+}
+.shopInfo-head-card-info{
+  flex-direction: column;
+  justify-content: space-around;
+  height: 170rpx;
+  margin-left: 25rpx;
+  width: 492rpx;
+}
+.shopInfo-head-card-info .flex{
+  justify-content: space-between;
+}
+.conmit-option-card-son{
+  height: 90rpx;
+  box-sizing: content-box;
+  display: -webkit-flex;
+  display: flex;
+  line-height: 90rpx;
+  justify-content: space-between;
+}
+.conmit-option-card-son > .flex view:first-child{
+  margin-right: 28rpx;
+}
+.c-o-c1{
+  border-bottom: 10rpx solid #f8f8f8;
+}
+.underline{
+  border-bottom:1rpx solid #f8f8f8;
+}
+.gobuy{
+  position: fixed;
+  bottom: 0;
+  box-sizing: content-box;
+  width: 100%;
+  height: 190rpx;
+  display: -webkit-flex;
+  display: flex;
+  border-top:10rpx solid #f8f8f8;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+}
+.gobuy-head{
+  font-size: 27rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+}
+.gobuy-btn{
+  height: 90rpx;
+  line-height: 90rpx;
+  color: #fff;
+  background-color: #72d52b;
+  width: 684rpx;
+  border-radius: 0%;
+}

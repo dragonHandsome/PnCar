@@ -1,0 +1,140 @@
+<view class='container'>
+  <view class='swiper'>
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color='rgba(0,0,0,0.5)' indicator-active-color='rgb(56,151,227)' circular="true">
+      <block wx:for="{{imgUrls}}" wx:key="{{item}}">
+        <swiper-item>
+          <view class='swiper-img'>
+            <image src='{{item}}'></image>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='shop-info font8'>
+    <view class='marginAuto'>
+      <view class='shop-info-head flex'>
+        <text class='fontred font16'>￥{{shopInfo.price}}</text>
+        <text class='font4 fontc'>月销{{shopInfo.sendNum}}</text>
+      </view>
+      <view class='shop-info-bom'>
+        <text class='font4 bgblue'>{{shopInfo.property}}</text>
+        <text>{{shopInfo.name}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='shop-select-nature nature-underline' bindtap='buyShop'>
+    <view class='marginAuto font6 fontb flex'>
+      <view wx:if="{{(selectInfo.flag)}}">已选规格 ({{selectInfo.nature + selectInfo.rom}})</view>
+      <view wx:else>选择规格</view>
+      <view class='jianT'></view>
+    </view>
+  </view>
+  <view class='shop-eval shop-select-nature'>
+    <view class='marginAuto font6 fontb flex'>
+      <view>
+        <view>商品评价 ({{evalInfo.length}})</view>
+      </view>
+      <view class='flex'>
+        <view class='fontc' style='margin-right:10rpx'>查看全部</view>
+        <view class='jianT'></view>
+      </view>
+    </view>
+  </view>
+  <view class='nature-underline'>
+    <block wx:for='{{evalInfo}}' wx:key='{{item.id}}'>
+      <view class='shop-eval-card marginAuto font6 fonta'>
+        <view class='shop-eval-card-head flex'>
+          <view class='s-e-c-h-img'>
+            <image src='/images/pic-banner01.png'></image>
+          </view>
+          <view class='s-e-c-h-info flex'>
+            <view class='s-e-c-h-info-name'>{{item.name}}</view>
+            <view class='s-e-c-h-info-name'>{{item.sendTime}}</view>
+          </view>
+        </view>
+        <view class='s-e-c-h-content'>
+          {{item.content}}
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class='shop-eval shop-select-nature'>
+    <view class='marginAuto font6 fontb flex'>
+      <view>
+        <view>商品详情</view>
+      </view>
+    </view>
+  </view>
+  <view class='detail-Img'>
+    <image src='/images/06.jpg' mode="widthFix"></image>
+  </view>
+  <view class='underNav flex'>
+    <view class='underNav-left font4 fontb flex'>
+      <view class='underNav-card'>
+        <view class='underNav-card-img'>
+          <image src='/images/ic-home.svg'></image>
+        </view>
+        <view>
+          首页
+        </view>
+      </view>
+      <view class='underNav-card'>
+        <view class='underNav-card-img'>
+          <image src='/images/ic-con.svg'></image>
+        </view>
+        <view>
+          收藏
+        </view>
+      </view>
+    </view>
+    <button class='underNav-card-btn font6' bindtap='buyShop'>立即购买</button>
+  </view>
+  <view class="shop-nature-cardDad {{buyFlag?'act':''}}">
+    <view class='shop-nature-card'>
+      <view class='shop-nature-card-top flex'>
+        <view class='shop-nature-card-img' bindtap='seeBigImg' data-src='{{shopInfo.img}}'>
+          <image src='{{shopInfo.img}}'></image>
+        </view>
+        <view class='shop-nature-card-info flex'>
+          <view class='fontred font16'>￥{{shopInfo.price}}</view>
+          <view class='fontc font4'> 月销{{shopInfo.sendNum}}</view>
+          <view class='fongb font4' wx:if="{{selectInfo.flag}}">(已选：{{selectInfo.nature +selectInfo.rom}})</view>
+        </view>
+      </view>
+    </view>
+    <view class='shop-nature-color font6'>
+      <view class='shop-nature-color-title fonta'>
+        颜色
+      </view>
+      <view class='shop-nature-color-cards fontb flex' bindtap='selectNature'>
+        <block wx:for='{{shopInfo.nature}}' wx:key='{{item.natureId}}'>
+        <view class="shop-nature-color-card {{colorSelect == item.natureId?'act':''}}" data-id='{{item.natureId}}'  data-name='{{item.name}}'>{{item.name}}</view>
+        </block>
+      </view>
+    </view>
+    <view class='shop-nature-color font6'>
+      <view class='shop-nature-color-title fonta'>
+        存储容量
+      </view>
+      <view class='shop-nature-color-cards fontb flex' bindtap='selectRom'>
+        <block wx:for='{{shopInfo.roms}}' wx:key='item.romId'>
+        <view class="shop-nature-color-card {{romSelect == item.romId?'act':''}}" data-id='{{item.romId}}' data-name='{{item.name}}'>{{item.name}}</view>
+        </block>
+      </view>
+    </view>
+    <view class='shop-nature-color font6'>
+      <view class='shop-nature-color-title fonta flex shop-seletNumDad'>
+        <view>数量</view>
+        <view class='shop-seletNum flex'>
+          <view class='shop-seletNum-tap fontgray' bindtap='changeNum' data-havior='0'>—</view>
+          <view class='shop-seletNum-tap'>{{num}}</view>
+          <view class='shop-seletNum-tap fontgray' bindtap='changeNum' data-havior='1'>+</view>
+        </view>
+      </view>
+    </view>
+    <button class="buyshop {{buyFlag?'act':''}}" wx:if="{{selectInfo.nature == '' || selectInfo.rom == ''}}">立即购买</button>
+    <button class="buyshop {{buyFlag?'act':''}}" wx:else>确认购买</button>
+    <view class='X fontb' bindtap='buyShop'>Ｘ</view>
+  </view>
+  <view class="black" bindtap='buyShop' wx:if="{{buyFlag}}"></view>
+</view>

@@ -1,0 +1,67 @@
+<view class='address'>
+  <view class='c-o-c1'>
+    <view class='marginAuto conmit-option-card-son underline'>
+      <view class='fontb'>收货人</view>
+      <view>
+        <input placeholder='姓名' bindblur='bindblur' data-type='name' maxlength='16'></input>
+      </view>
+    </view>
+    <view class='marginAuto conmit-option-card-son underline'>
+      <view class='fontb'>联系方式</view>
+      <view class='flex'>
+        <view>
+          <input placeholder='手机号码' type='number' bindblur='bindblur' data-type='phone' maxlength='16'></input>
+        </view>
+      </view>
+    </view>
+    <view class='marginAuto conmit-option-card-son underline'>
+      <view class='fontb'>收货时间</view>
+      <view class='flex have' bindtap='changeDateFlag'>
+        <view class='fontc'>
+          {{addressInfo.getTime?addressInfo.getTime:'请选择收货时间'}}
+        </view>
+        <view class='jianT'></view>
+      </view>
+    </view>
+  </view>
+  <view class='c-o-c1'>
+      <view class='marginAuto conmit-option-card-son underline'>
+        <view class='fontb'>省份</view>
+        <view class='flex have' bindtap='changeCityFlag'>
+          <view class='fontc'>
+            {{addressInfo.native[0]?addressInfo.native[0]:'请选择省份'}}
+          </view>
+          <view class='jianT'></view>
+        </view>
+      </view>
+      <view class='marginAuto conmit-option-card-son underline'>
+        <view class='fontb'>城市</view>
+        <view class='flex have' bindtap='changeCityFlag'>
+          <view class='fontc'>
+            {{addressInfo.native[1]?addressInfo.native[1]:'请选择城市'}}
+          </view>
+          <view class='jianT'></view>
+        </view>
+      </view>
+      <view class='marginAuto conmit-option-card-son underline'>
+        <view class='fontb'>区县</view>
+        <view class='flex have' bindtap='changeCityFlag'>
+          <view class='fontc'>
+            {{addressInfo.native[2]?addressInfo.native[2]:'请选择区县'}}
+          </view>
+          <view class='jianT'></view>
+        </view>
+      </view>
+    <view class='marginAuto conmit-option-card-son underline'>
+      <view class='fontb'>详细地址</view>
+      <view>
+        <input placeholder='请填写详细地址' bindblur='bindblur' data-type='detailAddr' maxlength='200'></input>
+      </view>
+    </view>
+  </view>
+  <button class='addr-btn'>保存</button>
+  <button class='addr-btn addr-btn2 fontb'>删除</button>
+  <import src='/template/picker.wxml' />
+  <template is='pickerdate' data="{{years,months,days,dateFlag,value}}"></template>
+  <template is='pickerCity' data="{{provinces,citys,countys,value,cityPickerFlag}}"></template>
+</view>

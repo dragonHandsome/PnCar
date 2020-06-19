@@ -1,0 +1,244 @@
+.container{
+  padding-bottom: 100rpx;
+}
+.swiper{
+  width: 100%;
+}
+.swiper swiper{
+  height: 560rpx;
+  box-sizing: border-box;
+}
+.swiper-img{
+  height: 560rpx;
+  width: 100%;
+}
+.font16{
+  font-size: 36rpx;
+}
+.font8{
+  font-size: 28rpx;
+}
+.shop-info{
+  height: 240rpx;
+  width: 100%;
+}
+.shop-info-head{
+  padding-top: 35rpx;
+  border-top:1px solid rgb(245,245,245);
+  justify-content: space-between;
+  margin-bottom: 25rpx;
+}
+.shop-info-bom{
+  line-height: 45rpx;
+}
+.shop-info-bom .bgblue{
+  padding: 2rpx 15rpx;
+  color: #fff;
+  border-radius: 20rpx;
+  margin-right: 20rpx;  
+}
+.marginAuto{
+  width: 694rpx;
+  margin:0 auto;
+  height: 100%;
+}
+.shop-select-nature{
+  height: 100rpx;
+  width: 100%;
+  border-top:1rpx solid rgb(245,245,245);
+}
+.nature-underline{
+  border-bottom:10rpx solid rgb(245,245,245);
+  width: 100%;
+}
+.shop-select-nature>view{
+  line-height: 110rpx;
+  justify-content: space-between;
+  align-items: center;
+}
+.shop-eval .marginAuto{
+  border-bottom: 1rpx solid rgb(245,245,245);
+}
+.shop-eval.shop-select-nature{
+  border-top:none;
+}
+.shop-eval-card{
+  justify-content: flex-start;
+  padding-bottom: 30rpx;
+  border-bottom: 1rpx solid rgb(245,245,245);
+}
+.shop-eval-card-head{
+  justify-content: space-between;
+  align-items: center;
+  height: 110rpx;
+}
+.s-e-c-h-info{
+  justify-content: space-between;
+  width: 600rpx;
+  align-items: center;
+}
+.s-e-c-h-img{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+}
+.s-e-c-h-img>image{
+  position: absolute;
+  top:0;
+  left: 0;
+}
+.s-e-c-h-content{
+  line-height: 46rpx;
+}
+.detail-Img{
+  width: 100%
+}
+.detail-Img>image{
+  width: 100%;
+  height: auto;
+}
+.underNav{
+  position: fixed;
+  bottom: 0;
+  height:100rpx;
+  width: 100%;
+  border-top: 1rpx solid rgb(245,245,245);
+  background-color: #fff;
+  justify-content: space-between;
+}
+.underNav-left{
+  width: 500rpx;
+}
+.shop-nature-cardDad{
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background-color: #fff;
+  z-index: 3;
+  height: 0rpx;
+  transition: all 0.3s;
+  overflow: hidden;
+}
+.shop-nature-cardDad.act{
+  height: 1000rpx;
+}
+.underNav-card-btn{
+  height: 100%;
+  width: 250rpx;
+  color: #fff;
+  line-height: 100rpx;
+  text-align: center;
+  background-color: #e6383b;
+  right: 0;
+  border-radius: 0;
+}
+.underNav-card{
+  line-height: 50rpx;
+  text-align: center;
+  width: 200rpx;
+}
+.underNav-card-img{
+  width: 40rpx;
+  height: 40rpx;
+  margin:0 auto;
+  margin-top: 15rpx;
+}
+.shop-nature-card-top{
+  height: 170rpx;
+  margin:30rpx;
+}
+.shop-nature-card-img{
+  padding: 10rpx;
+  border-radius: 10rpx;
+  border:1rpx solid rgb(245,245,245);
+  width: 170rpx;
+  height: 170rpx;
+  margin-right: 36rpx;
+}
+.shop-nature-card-info{
+  flex-direction: column;
+  justify-content: space-around;
+}
+.shop-nature-color{
+  width: 690rpx;
+  margin:0 auto;
+}
+.shop-nature-color-title{
+  border-bottom: 1rpx solid rgb(245,245,245);
+  height: 50rpx;
+  margin-top:70rpx;
+}
+.shop-nature-color-cards{
+  flex-wrap: wrap;
+  margin-top:36rpx;
+}
+.shop-nature-color-card{
+  width: 110rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  border-radius: 20rpx;
+  text-align: center;
+  background-color: rgb(245,245,245);
+  margin-right: 30rpx;
+}
+.shop-nature-color-card.act{
+  color: #fff;
+  background-color: rgb(56,151,227);
+}
+.shop-seletNumDad{
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20rpx;
+}
+.shop-seletNum-tap{
+  width: 70rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  background-color: rgb(245,245,245);
+  font-weight: bold;
+  border-radius: 10rpx;
+}
+.shop-seletNum :nth-child(2){
+  background-color: rgba(0,0,0,0)
+}
+.shop-seletNum :nth-child(3){
+  background-color: rgb(56,151,227);
+  color: #fff;
+  font-size: 52rpx;
+  line-height: 41rpx;
+}
+.shop-seletNum{
+  padding-bottom: 10rpx;
+} 
+.buyshop{
+  position: absolute;
+  height: 0rpx;
+  bottom: 0rpx;
+  width: 100%;
+  color: #fff;
+  line-height: 100rpx;
+  text-align: center;
+  background-color: #e6383b;
+  border-radius: 0;
+  transition: all 0.3s;
+}
+.buyshop.act{
+  height: 100rpx;
+}
+.underNav-card-btn:hover,.buyshop:hover{
+  background-color: rgba(245,0,0,0.7);
+}
+.X{
+  position: absolute;
+  right: 28rpx;
+  top:28rpx;
+  font-size: 40rpx;
+  width: 50rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  z-index: 3;
+  text-align: center;
+}

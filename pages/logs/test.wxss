@@ -1,0 +1,12 @@
+.tab{
+  display: flex;
+}
+.tabLeft{
+  flex:1;
+}
+.tabLeft > .act{
+  background-color: greenyellow;
+}
+.tabRight{
+  flex:4;
+}

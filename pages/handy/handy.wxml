@@ -1,0 +1,7 @@
+<import src="/template/template.wxml" />
+<view class="container body">
+  <template is='nav' data='{{nav,currentPage,currentImg}}'></template>
+</view>
+<view style='height:100rpx;width:100rpx'>
+  <image src='/images/ic-home.svg'></image>
+</view>

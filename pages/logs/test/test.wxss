@@ -1,0 +1,28 @@
+.flex{
+  display: flex;
+}
+image{
+  width: 100%;
+  height: 100%;
+}
+.swiper{
+  width: 100%;
+  perspective:800px;
+}
+.dad{
+  padding-left: 100rpx;
+  padding-top: 20rpx;
+}
+.swiper-img{
+  width: 280px;
+  padding: 0 5rpx;
+  box-sizing: border-box;
+  filter: blur(1px);
+}
+.swiper-img image{
+  border-radius: 5%;
+}
+.swiper-img.act{
+  width: 320px;
+  filter: none
+}

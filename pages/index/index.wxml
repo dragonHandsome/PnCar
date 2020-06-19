@@ -1,0 +1,56 @@
+<import src="/template/template.wxml" />
+<view class="container body">
+  <template is='search' data='{{focusFlag,cityFlag,citys,recentCity,selectABC,historySearch,wantSearch}}'></template>
+  <view class='swiper'>
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color='rgba(0,0,0,0.5)' indicator-active-color='rgb(56,151,227)' circular="true">
+      <block wx:for="{{imgUrls}}" wx:key="{{item}}">
+        <swiper-item>
+          <view class='swiper-img'>
+            <image src='{{item}}' mode='aspectFit'></image>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='tab fonta font6 flex' bindtap='tabChange'>
+    <view class="{{current == 0?'act':''}}" data-type='0'>天气预报</view>
+    <view class="{{current == 1?'act':''}}" data-type='1'>最新入驻</view>
+    <view class="{{current == 2?'act':''}}" data-type='2'>公告</view>
+  </view>
+  <view class='tabContent flex'>
+    <swiper current='{{current}}'>
+      <swiper-item>
+        <scroll-view scroll-x='true'>
+          <view class='tabContent-img'>
+            <image src='{{weatherImg}}'></image>
+          </view>
+        </scroll-view>
+      </swiper-item>
+      <swiper-item>
+        <scroll-view scroll-x="true" style='width:700rpx;margin:0 auto;'>
+          <view class='newIn flex'>
+            <block wx:for='{{newIns}}' wx:key='{{item.id}}'>
+              <view class='newIn-card'>
+                <view class='newIn-img'>
+                  <image src='{{item.img}}'></image>
+                </view>
+                <view class='newIn-info font1'>{{item.name}}</view>
+              </view>
+            </block>
+          </view>
+        </scroll-view>
+      </swiper-item>
+      <swiper-item>
+        <scroll-view scroll-x='true'>
+          <view class='tabContent-img'>
+            <image src='{{weatherImg}}' mode='aspectFit'></image>
+          </view>
+        </scroll-view>
+      </swiper-item>
+    </swiper>
+  </view>
+  <view style='height:96rpx;width:100%'>
+    <template is='sxuan' data="{{selectFlag,selectInfo,sortImg}}"></template>
+  </view>
+  <template is='shop' data="{{shopList}}"></template>
+</view>

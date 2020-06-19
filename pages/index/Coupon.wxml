@@ -1,0 +1,30 @@
+<view class='Coupon font6'>
+  <view class='Coupon-head fontb flex' bindtap='changeCoupon'>
+    <view data-current='0' class="Coupon-head-son {{current == 0?'act':''}}">未使用</view>
+    <view data-current='1' class="Coupon-head-son {{current == 1?'act':''}}">已使用</view>
+    <view data-current='2' class="Coupon-head-son {{current == 2?'act':''}}">已过期</view>
+  <view class="underLineAct {{current == 1?'underLineAct2':current == 2?'underLineAct3':''}}"></view>
+  </view>
+  <view class='Coupon-bom'>
+    <block wx:for="{{CouponCard[current]}}" wx:key='{{item.id}}'>
+    <view class='Coupon-card'>
+      <image src='{{imgs[current][item.num - 5]}}'></image>
+      <view class='Coupon-card-head flex'>
+        <view class='Coupon-card-head-left'>
+          <text class='Coupon-card-head-num'>{{item.num}}</text>折
+        </view>
+        <view class='Coupon-card-head-center'>
+          <view class='Coupon-card-head-name'>{{item.name}}</view>
+          <view class='Coupon-card-head-ms fontc'>[{{item.ms}}]</view>
+        </view>
+        <view class='Coupon-card-head-have'>
+          {{current == 0?'立即使用':current == 1?'已经使用':'已经过期'}}
+        </view>
+      </view>
+      <view class='Coupon-card-bom font2'>
+        活动时间: {{item.timeStart}}至{{item.timeEnd}}
+      </view>
+    </view>
+    </block>
+  </view>
+</view>

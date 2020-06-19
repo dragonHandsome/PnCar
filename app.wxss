@@ -1,0 +1,93 @@
+/**app.wxss width - 40rpx; **/
+.container{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  box-sizing: border-box;
+} 
+.fontblue{
+  color:rgb(56,151,227);
+}
+.fontred{
+  color:rgb(255,0,0);
+}
+.fonta{
+  color:rgb(102,102,102);
+}
+.fontb{
+  color:rgb(51,51,51);
+}
+.fontc{
+  color:rgb(153,153,153);
+}
+.bgblue{
+  background-color: rgb(56,151,227);
+}
+.fontgray{
+  color: rgb(203,203,203)
+}
+.bggray{
+  background-color: rgb(245,245,245);
+}
+image{
+  width: 100%;
+  height: 100%;
+}
+.flex{
+  display: -webkit-flex;
+  display: flex;
+}
+.font1{
+  font-size: 21rpx;
+}
+.font2{
+  font-size: 22rpx;
+}
+.font3{
+  font-size: 23rpx;
+}
+.font4{
+  font-size: 24rpx;
+}
+.font5{
+  font-size: 25rpx;
+}
+.font6{
+  font-size: 26rpx;
+}
+.box-shadow{
+  -moz-box-shadow:1px 1px 5px #333333; -webkit-box-shadow:1px 1px 5px #333333; box-shadow:1px 1px 5px #333333;
+}
+.fonthide{
+  overflow : hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+-webkit-line-clamp: 2;
+-webkit-box-orient: vertical;
+}
+.body{
+  padding-top:96rpx;
+}
+.black{
+  position: fixed;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 1500rpx;
+  z-index: 0;
+  background-color: rgba(0,0,0,0.5);
+}
+.jianT{
+  width: 20rpx;
+  height: 20rpx;
+  transform: rotate(45deg);
+  box-sizing: border-box;
+  border:6rpx solid rgb(153,153,153);
+  border-width: 6rpx 6rpx 0 0;
+  align-self: center;
+}
+.jianT:hover{
+  border-color: rgb(56,151,227);
+}
